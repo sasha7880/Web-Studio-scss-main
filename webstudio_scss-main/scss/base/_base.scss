@@ -1,0 +1,42 @@
+@use '../utils/variables' as *;
+@use '../utils/fonts' as *;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family;
+  background-color: $light-txt-color;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.animation {
+  transition-property: color, background-color, fill, box-shadow, opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 738px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    max-width: 450px;
+  }
+}

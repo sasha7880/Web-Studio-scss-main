@@ -1,0 +1,87 @@
+@use "../utils/variables" as *;
+@use "../utils/placeholders" as *;
+@use "../utils/mixins" as *;
+@use "../utils/fonts" as *;
+
+.benefits {
+  padding-top: 94px;
+  padding-bottom: 94px;
+
+  &__container {
+    display: flex;
+  }
+
+  &__list {
+    display: flex;
+    gap: 30px;
+  }
+
+  &__title {
+    @extend %titles;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-align: left;
+    padding-bottom: 10px;
+
+    &::before {
+      content: "";
+      background-color: $background-team;
+      display: block;
+      padding: 25px 100px;
+      margin-bottom: 30px;
+    }
+
+    &--antena::before {
+      content: url(../images/main-page/antenna.jpg);
+    }
+
+    &--astronaut::before {
+      content: url(../images/main-page/astronaut.jpg);
+    }
+
+    &--clock::before {
+      content: url(../images/main-page/clock.jpg);
+    }
+
+    &--diagram::before {
+      content: url(../images/main-page/diagram.jpg);
+    }
+  }
+
+  &__desc {
+    @include txt($font-size: 14px, $line-height: 24px);
+    width: 270px;
+  }
+}
+
+@media (max-width: 768px) {
+  .benefits {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    &__list {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    &__title::before {
+      padding: 25px 142px;
+    }
+    
+    &__desc {
+      width: 354px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .benefits {
+    &__desc {
+      width: 100%;
+    }
+
+    &__title {
+      text-align: center;
+    }
+  }
+}

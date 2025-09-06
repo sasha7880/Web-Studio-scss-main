@@ -1,0 +1,8 @@
+@use '../utils/variables' as *;
+@use '../utils/placeholders' as *;
+@use '../utils/mixins' as *;
+@use '../utils/fonts' as*;
+
+.title {
+  @extend %titles
+}

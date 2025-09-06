@@ -1,0 +1,63 @@
+@use "../utils/variables" as *;
+@use "../utils/placeholders" as *;
+@use "../utils/mixins" as *;
+@use '../utils/fonts' as*;
+
+.clients {
+  padding-top: 94px;
+  padding-bottom: 94px;
+
+  &__list {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+  }
+
+  &__link {
+    border: 1px solid;
+    border-color: $icon-color;
+    border-radius: 4px;
+    padding: 16px 32px;
+    display: block;
+
+    &:hover {
+      border-color: $main-color;
+    }
+
+    &:hover .clients__icon {
+      fill: $main-color;
+    }
+  }
+
+  &__icon {
+    fill: $icon-color;
+    width: 106px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .clients {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    &__list {
+      flex-wrap: wrap;
+    }
+
+    &__link {
+      padding: 16px 60px;
+      max-width: 226px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .clients {
+    
+    &__link {
+      padding: 16px 52px;
+      max-width: 210px;
+    }
+  }
+}

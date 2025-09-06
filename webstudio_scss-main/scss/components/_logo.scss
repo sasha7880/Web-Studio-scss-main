@@ -1,0 +1,26 @@
+@use '../utils/variables' as *;
+@use '../utils/placeholders' as *;
+@use '../utils/mixins' as *;
+@use '../utils/fonts' as*;
+
+.logo {
+  color: $main-color;
+  font-family: $second-family;
+  font-weight: 700;
+  font-size: 26px;
+  letter-spacing: 0.03em;
+}
+
+.logo__span {
+  color: $span-color;
+}
+
+.logo__span--footer {
+    color: $light-txt-color;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    font-size: 24px;
+  }
+}
